@@ -10,13 +10,15 @@ export default function Navbar() {
           SaaSFlow
         </Link>
         <nav className="hidden md:flex items-center gap-6">
-          <a href="#services" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Services</a>
-          <a href="#case-studies" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Case Studies</a>
-          <a href="#pricing" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Pricing</a>
+          <Link to="/services" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Services</Link>
+          <Link to="/case-studies" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Case Studies</Link>
+          <Link to="/pricing" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Pricing</Link>
         </nav>
         <div className="flex items-center gap-4">
           <Button variant="ghost" className="hidden md:flex">Log In</Button>
-          <Button size="sm">Book Strategy</Button>
+          <Link to="/contact">
+            <Button size="sm" type="button">Book Strategy</Button>
+          </Link>
         </div>
       </div>
     </header>
