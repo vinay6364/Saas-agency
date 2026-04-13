@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  api-gateway:
+    image: nginx:latest
+    container_name: saas_api_gateway
+    ports:
+      - "80:80"
+    volumes:
+      - ./api-gateway/nginx.conf:/etc/nginx/nginx.conf:ro
+    # extra_hosts is used so NGINX inside the container can reach our 
+    # frontend/backend servers running on the host machine (localhost)
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
